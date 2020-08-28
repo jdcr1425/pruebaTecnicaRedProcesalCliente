@@ -1,11 +1,29 @@
-# Cliente
+# Prueba Técnica Red procesal (API)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+_Gestión de empleados_
 
-## Development server
+## Comenzando 🚀
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+_Para obtener una copia del proyecto en su máquina local use Git clone_
 
-## Build
+```
+git clone https://github.com/jdcr1425/pruebaTecnicaRedProcesalCliente.git
+```
+### Pre-requisitos 📋
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+_Nodejs 12.18.3 o más actual_
+
+[Angular CLI](https://github.com/angular/angular-cli) version 10.0.6 o superior.
+
+
+### Instalación 🔧
+
+_En la raiz del proyecto, en la consola instalaremos las dependencias_
+
+```
+npm install
+```
+
+## Servidor de desarrollo
+
+Corremos `ng serve` Para un servidor de desarrollo. Navegamos a  `http://localhost:4200/`.
