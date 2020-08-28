@@ -1,7 +1,7 @@
-<div *ngIf="newEmployees.length == 0" class="row">
+<div *ngIf="newEmployees.length == 0" class="row animated fadeIn fast mt-5">
     <div class="col-md-12">
         <div class="alert alert-info">
-            No hay empleados registrados.
+            No hay empleados registrados. <span class="btn btn-outline-success" [routerLink]="['/employees/add']">Registra uno</span>
         </div>
     </div>
 </div>

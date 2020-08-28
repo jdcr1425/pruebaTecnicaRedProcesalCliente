@@ -1,4 +1,4 @@
-<h4 class="mt-5 animated fadeIn fast">Crear un nuevo empleado</h4>
+<h4 class="mt-5 animated fadeIn fast">Modificar un empleado</h4>
 <hr>
 <div class="container p-4 mt-5 animated fadeIn">
     <div class="row">
@@ -32,50 +32,15 @@
                             <input type="email" formControlName="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <label for="tipoDoc">Fecha de ingreso</label>
-                            <input type="date" formControlName="date" name="fecha" class="form-control" required>
-                        </div>
-                        <div class="form-group">
                             <button class="btn btn-primary btn-block" type="submit" [disabled]="!employeeFomr.valid">
-                                Guardar
+                                Actualizar
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-md-5 mx-auto">
-            <div class=" card-header">
-                <h4>Agregar Télefono</h4>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <form [formGroup]="telephoneForm" (ngSubmit)="onSubmitFirst()">
-                        <div class="form-group">
-                            <label for="tipoTel">Tipo de télefono</label>
-                            <select formControlName="type" class="form-control" required>
-                              <option value="tel">Télefono</option>
-                              <option value="cell">Celular</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" formControlName="number" class="form-control" placeholder="Número" autofocus required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" formControlName="indicative" class="form-control" placeholder="Indicativo">
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary btn-block" type="submit" [disabled]="!telephoneForm.valid">Agregar</button>
-                        </div>
-                    </form>
-                </div>
-                <div *ngIf="telefonos.length>0" class="card-footer">
-                    <ul class="listaNum">
-                        <li *ngFor="let num of telefonos">{{num.number}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <!-- PEGAR AQUI -->
 
     </div>
 </div>
