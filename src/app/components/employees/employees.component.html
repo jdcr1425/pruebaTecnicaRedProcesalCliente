@@ -1,0 +1,11 @@
+<div *ngIf="newEmployees.length == 0" class="row">
+    <div class="col-md-12">
+        <div class="alert alert-info">
+            No hay empleados registrados.
+        </div>
+    </div>
+</div>
+
+<div class="card-columns mt-5 text-center animated fadeIn">
+    <app-employee [employee]="employee" *ngFor="let employee of newEmployees"></app-employee>
+</div>

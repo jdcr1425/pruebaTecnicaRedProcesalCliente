@@ -1,0 +1,31 @@
+<div class="card text-left" style="width: 18rem">
+    <div class="card-header text-center">
+        {{ employee.empleado.nombres }} {{ employee.empleado.apellidos }}
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <strong>{{ employee.empleado.tipoIdentificacion }}</strong> : {{ employee.empleado.numeroIdentificacion }}
+        </li>
+        <li class="list-group-item">
+            <strong>Salario</strong> : {{ employee.empleado.salarioMensual | currency }}
+        </li>
+        <li class="list-group-item">
+            <strong>Ingresó</strong> : {{ employee.empleado.fechaIngreso | date }}
+        </li>
+        <li class="list-group-item">
+            <strong>Email</strong> : {{ employee.empleado.correoElectronico }}
+        </li>
+        <li class="list-group-item">
+            <strong>Télefono(s)</strong> :
+            <ul *ngIf="employee.telefonos" class="list-group">
+                <li *ngFor="let tel of employee.telefonos" class="list-group-item">
+                    {{ tel.numero }} - {{tel.tipo}}
+                </li>
+            </ul>
+        </li>
+        <li class="list-group-item">
+            <a [routerLink]="['']" class="btn btn-outline-primary btn-block">Modificar información</a
+      >
+    </li>
+  </ul>
+</div>

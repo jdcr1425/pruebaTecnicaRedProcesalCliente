@@ -1,0 +1,14 @@
+<h3 class="mt-5">Buscado: <small>{{nombre}}</small></h3>
+<hr />
+
+<div *ngIf="newEmployees.length == 0" class="row">
+    <div class="col-md-12">
+        <div class="alert alert-info">
+            No existen resultados con el nombre {{nombre}}
+        </div>
+    </div>
+</div>
+
+<div *ngIf="newEmployees" class="card-columns mt-5 text-center animated fadeIn">
+    <app-employee [employee]="employee" *ngFor="let employee of newEmployees"></app-employee>
+</div>
