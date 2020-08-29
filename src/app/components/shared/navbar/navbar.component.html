@@ -23,8 +23,8 @@
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input (keyup.enter)="getEmployees(nombre.value)" class="form-control mr-sm-2" type="text" placeholder="Buscar empleados" aria-label="Search" #nombre required/>
+            <form [formGroup]="navForm" class="form-inline my-2 my-lg-0">
+                <input formControlName="busqueda" (keyup.enter)="getEmployees(nombre.value)" class="form-control mr-sm-2" type="text" placeholder="Buscar empleados" aria-label="Search" #nombre required/>
                 <button (click)="getEmployees(nombre.value)" class="btn btn-outline-primary my-2 my-sm-0" type="text">
           Buscar
         </button>

@@ -61,19 +61,18 @@ export class CreateEmployeeComponent implements OnInit {
             personaId: id['id'],
           };
           this._employeeService.createTel(newTel).subscribe((success) => {
-            console.log(success);
           });
         });
         this.telephoneForm.reset();
         this.employeeFomr.reset();
-        alert("Empleado creado con éxito!")
+        alert("Empleado creado con éxito!");
+        this.telefonos = [];
       });
     }
   }
 
   onSubmitFirst() {
     this.telefonos.push(this.telephoneForm.value);
-    console.log(this.telefonos);
     this.telephoneForm.reset();
   }
 }

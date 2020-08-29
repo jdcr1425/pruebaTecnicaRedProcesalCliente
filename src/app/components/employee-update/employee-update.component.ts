@@ -19,6 +19,7 @@ export class EmployeeUpdateComponent implements OnInit {
     docNumber: new FormControl('', Validators.required),
     salary: new FormControl('', Validators.required),
     email: new FormControl('', Validators.email),
+    date: new FormControl('', Validators.required),
   });
 
   constructor(
@@ -33,7 +34,6 @@ export class EmployeeUpdateComponent implements OnInit {
 
       this._employeeService.getEmployee(this.id).subscribe((employee) => {
         this.employee = employee['data']['employee'][0];
-        console.log(this.employee);
         this.setValues();
       });
     });
@@ -50,6 +50,9 @@ export class EmployeeUpdateComponent implements OnInit {
       .setValue(this.employee['numeroIdentificacion']);
     this.employeeFomr.get('salary').setValue(this.employee['salarioMensual']);
     this.employeeFomr.get('email').setValue(this.employee['correoElectronico']);
+    //yyyy-MM-dd
+    const fecha = new Date(this.employee['fechaIngreso']);
+    this.employeeFomr.get('date').setValue(fecha.toISOString().slice(0, 10));
   }
 
   onSubmit() {
@@ -60,6 +63,7 @@ export class EmployeeUpdateComponent implements OnInit {
       docNumber,
       salary,
       email,
+      date
     } = this.employeeFomr.value;
 
     const newEmployee = {
@@ -69,12 +73,14 @@ export class EmployeeUpdateComponent implements OnInit {
       numeroIdentificacion: docNumber,
       correoElectronico: email,
       salarioMensual: salary,
+      fechaIngreso: date
     };
 
     this._employeeService
       .updateEmployee(this.id, newEmployee)
       .subscribe((success) => {
-        alert("Empleado actualizado con éxito!")
+        this._router.navigate(['/employees']);
+        alert('Empleado actualizado con éxito!');
       });
   }
 }

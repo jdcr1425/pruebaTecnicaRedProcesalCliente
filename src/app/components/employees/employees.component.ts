@@ -20,7 +20,6 @@ export class EmployeesComponent implements OnInit {
     this._employeesService.getEmployees().subscribe((employees) => {
       if (employees['state'] == 'ok') {
         this.employees = employees['data']['employees'];
-        console.log(this.employees);
         this.getTel();
       }
     });
@@ -37,8 +36,6 @@ export class EmployeesComponent implements OnInit {
         };
         this.newEmployees.push(newObject);
       });
-    });
-  console.log(this.newEmployees)
-    
+    });    
   }
 }

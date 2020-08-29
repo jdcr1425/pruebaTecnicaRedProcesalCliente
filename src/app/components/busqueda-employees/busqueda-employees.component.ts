@@ -10,8 +10,8 @@ import { EmployeesService } from '../../services/employees.service';
 export class BusquedaEmployeesComponent implements OnInit {
   filteredEmployees = [];
   allEmployees = [];
-  nombre ="";
-  newEmployees=[];
+  nombre = '';
+  newEmployees = [];
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _router: Router,
@@ -26,7 +26,8 @@ export class BusquedaEmployeesComponent implements OnInit {
   }
 
   showEmployees(nombre) {
-    this.filteredEmployees =[];
+    this.newEmployees = [];
+    this.filteredEmployees = [];
     this._employeeService.getEmployees().subscribe((employees) => {
       this.allEmployees = employees['data']['employees'];
       this.allEmployees.forEach((employee) => {
@@ -40,7 +41,7 @@ export class BusquedaEmployeesComponent implements OnInit {
 
   getTel() {
     let newObject = {};
-    
+
     this.filteredEmployees.forEach((employee) => {
       this._employeeService.getTelephones(employee['id']).subscribe((tels) => {
         newObject = {
@@ -50,9 +51,5 @@ export class BusquedaEmployeesComponent implements OnInit {
         this.newEmployees.push(newObject);
       });
     });
-  console.log(this.newEmployees)
-    
   }
-
-
 }
